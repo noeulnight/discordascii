@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Discord Ascii Converter</title>
+  </head>
+  <body>
+    <div class="w-full h-screen" style="background-color: #5865F2;">
+      <div class="flex justify-center items-center h-screen">
+        <div class="w-auto">
+          <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+              <h1 class="text-center text-2xl font-bold">Discord Ascii Converter</h1>
+              <p class="text-center text-gray-700 text-base">Convert your Discord messages to ASCII!!</p>
+            </div>
+            <div class="mb-5">
+              <h1 class="text-xl font-semibold">Select message format</h1>
+              <div class="flex">
+                <input class="mr-1" type="radio" name="format" id="f0" checked>
+                <label class="mr-3" id="format" for="f0">Default</label>
+                <input class="mr-1" type="radio" name="format" id="f1">
+                <label class="mr-3" id="format" for="f1"><b>Bold</b></label>
+                <input class="mr-1" type="radio" name="format" id="f4">
+                <label class="mr-3" id="format" for="f4"><u>Underline</u></label>
+              </div>
+            </div>
+            <div class="mb-5">
+              <h1 class="text-xl font-semibold">Select message color</h1>
+              <div class="flex">
+                <input class="mr-1" type="radio" name="mcolor" id="c2" checked>
+                <label class="mr-3" id="mcolor" for="c2">White</label>
+                <input class="mr-1" type="radio" name="mcolor" id="c0">
+                <label class="mr-3" id="mcolor" style="color: #dc322f;" for="c0">Red</label>
+                <input class="mr-1" type="radio" name="mcolor" id="c1">
+                <label class="mr-3" id="mcolor" style="color: #4f545c;" for="c1">Gray</label>
+                <input class="mr-1" type="radio" name="mcolor" id="c2">
+                <label class="mr-3" id="mcolor" style="color: #859900;" for="c2">Green</label>
+                <input class="mr-1" type="radio" name="mcolor" id="c2">
+                <label class="mr-3" id="mcolor" style="color: #b58900;" for="c2">Yellow</label>
+                <input class="mr-1" type="radio" name="mcolor" id="c2">
+                <label class="mr-3" id="mcolor" style="color: #268bd2;" for="c2">Blue</label>
+                <input class="mr-1" type="radio" name="mcolor" id="c2">
+                <label class="mr-3" id="mcolor" style="color: #d33682;" for="c2">Pink</label>
+                <input class="mr-1" type="radio" name="mcolor" id="c2">
+                <label class="mr-3" id="mcolor" style="color: #2aa198;" for="c2">Turquoise</label>
+              </div>
+            </div>
+            <div class="mb-5">
+              <h1 class="text-xl font-semibold">Select message background-color</h1>
+              <div class="flex">
+                <input class="mr-1" type="radio" name="bcolor" id="b2">
+                <label class="mr-3" id="bcolor" for="b2">White</label>
+                <input class="mr-1" type="radio" name="bcolor" id="b0">
+                <label class="mr-3" id="bcolor" for="b0">Navy</label>
+                <input class="mr-1" type="radio" name="bcolor" id="b1">
+                <label class="mr-3" id="bcolor" for="b1">Orange</b></label>
+                <input class="mr-1" type="radio" name="bcolor" id="b2">
+                <label class="mr-3" id="bcolor" for="b2">Gray</label>
+                <input class="mr-1" type="radio" name="bcolor" id="b2">
+                <label class="mr-3" id="bcolor" for="b2">LightGray</label>
+                <input class="mr-1" type="radio" name="bcolor" id="b2">
+                <label class="mr-3" id="bcolor" for="b2">Silver</label>
+                <input class="mr-1" type="radio" name="bcolor" id="b2">
+                <label class="mr-3" id="bcolor" for="b2">Gainsboro</label>
+                <input class="mr-1" type="radio" name="bcolor" id="b2">
+                <label class="mr-3" id="bcolor" for="b2">Blurple</label>
+              </div>
+            </div>
+            <div class="mb-2">
+              <h1 class="text-xl font-semibold">Write your message</h1>
+              <textarea class="w-full h-32 p-2 bg-gray-200 rounded-lg" id="message" placeholder="This is a simple text"></textarea>
+            </div>
+            <button class="w-full p-3 text-white rounded-lg font-bold mb-3 active:scale-105 duration-200" style="background-color: #5865F2;">Convert!</button>
+            <div class="mb-5">
+              <h1 class="text-xl font-semibold">Convert result</h1>
+              <textarea onclick="copy()" class="w-full h-32 p-2 bg-gray-200 rounded-lg" id="result" readonly>```ascii&#10;value&#10;```</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const colors = {
+        0: '#b9bbbe',
+        30: '#4f545c',
+        31: '#dc322f',
+        32: '#859900',
+        33: '#b58900',
+        34: '#268bd2',
+        35: '#d33682',
+        36: '#2aa198',
+        37: '#fff',
+        40: '#002b36',
+        41: '#cb4c16',
+        42: '#586e75',
+        43: '#657b83',
+        44: '#839496',
+        45: '#6c71c4',
+        46: '#93a1a1',
+        47: '#fdf6e3',
+      }
+
+      function onConvert () {
+
+      }
+
+      function copy () {
+        let textarea = document.getElementById("result")
+        textarea.select()
+        document.execCommand("copy")
+        alert('Copyed!')
+      }
+    </script>
+  </body>
+</html>
